@@ -8,7 +8,7 @@
     "manager",
     "Saitama"
   ],
-  "repository": "https://github.com/Flash11553/Robot",
+  "repository": "https://github.com/Flash11553/Robot/NezrinRobot-main",
   "addons": [
     {
       "plan": "heroku-postgresql:14"
