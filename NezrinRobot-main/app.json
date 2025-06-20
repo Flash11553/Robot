@@ -1,0 +1,66 @@
+{
+  "name": "NəzrinRobot",
+  "description": "Azərbaycanca olan çox funksiyalı qrup idarə botu.",
+  "keywords": [
+    "telegram",
+    "anime",
+    "group",
+    "manager",
+    "Saitama"
+  ],
+  "repository": "https://github.com/Flash11553/Robot",
+  "addons": [
+    {
+      "plan": "heroku-postgresql:14"
+    }
+  ],
+  "env": {
+    "TOKEN": {
+      "description": "Bot token buraya",
+      "required": true
+    },
+    "API_ID": {
+      "description": "my.telegram.org saytından alın.",
+      "required": true
+    },
+    "API_HASH": {
+      "description": "my.telegram.org saytından alın.",
+      "required": true
+    },
+    "SQLALCHEMY_DATABASE_URI": {
+      "description": "Boş buraxa bilərsiniz.",
+      "required": false
+    },
+    "OWNER_ID": {
+      "description": "Telegram User ID",
+      "required": true
+    },
+    "OWNER_USERNAME": {
+      "description": "Username (ə @ olmadan)"
+    },
+    "SUPPORT_CHAT": {
+      "description": "Support qrupunuzun adı",
+      "required": true
+    },
+    "EVENT_LOGS": {
+      "description": "Loglar üçün kanal ID",
+      "required": true
+    },
+    "JOIN_LOGGER": {
+      "description": "Botun qoşulduğu qrupların ID-si",
+      "required": true
+    },
+    "CASH_API_KEY": {
+      "description": "https://www.alphavantage.co/support/#api-key",
+      "required": true
+    },
+    "TIME_API_KEY": {
+      "description": "https://timezonedb.com/api",
+      "required": true
+    },
+    "ENV": {
+      "description": "Ətraf mühit dəyişəni",
+      "value": "ANYTHING"
+    }
+  }
+}
