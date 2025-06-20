@@ -1,77 +1,43 @@
-# aykhan_s | RoBotlarimTg
-# NezrinRobot Dockerfile
+# NezrinRobot Dockerfile - Optimized by ChatGPT
 
-FROM python:3.8.5-slim-buster
+FROM python:3.10-slim
 
-ENV PIP_NO_CACHE_DIR 1
+ENV PIP_NO_CACHE_DIR=1 \
+    PYTHONUNBUFFERED=1 \
+    DEBIAN_FRONTEND=noninteractive
 
-RUN sed -i.bak 's/us-west-2\.ec2\.//' /etc/apt/sources.list
-
-# Tələblərin quraşdırılması
+# Sistem asılılıqları
 RUN apt update && apt upgrade -y && \
     apt install --no-install-recommends -y \
-    debian-keyring \
-    debian-archive-keyring \
-    bash \
-    bzip2 \
-    curl \
-    figlet \
     git \
-    util-linux \
-    libffi-dev \
-    libjpeg-dev \
-    libjpeg62-turbo-dev \
-    libwebp-dev \
-    linux-headers-amd64 \
-    musl-dev \
-    musl \
-    neofetch \
-    php-pgsql \
-    python3-lxml \
-    postgresql \
-    postgresql-client \
-    python3-psycopg2 \
+    curl \
+    wget \
+    unzip \
+    ffmpeg \
     libpq-dev \
-    libcurl4-openssl-dev \
+    libjpeg-dev \
+    libwebp-dev \
     libxml2-dev \
     libxslt1-dev \
-    python3-pip \
-    python3-requests \
-    python3-sqlalchemy \
-    python3-tz \
-    python3-aiohttp \
-    openssl \
-    pv \
-    jq \
-    wget \
-    python3 \
-    python3-dev \
-    libreadline-dev \
-    libyaml-dev \
+    zlib1g-dev \
     gcc \
-    sqlite3 \
-    libsqlite3-dev \
-    sudo \
-    zlib1g \
-    ffmpeg \
+    libffi-dev \
     libssl-dev \
-    libgconf-2-4 \
-    libxi6 \
+    build-essential \
+    libsqlite3-dev \
     xvfb \
-    unzip \
-    libopus0 \
-    libopus-dev \
-    && rm -rf /var/lib/apt/lists /var/cache/apt/archives /tmp
+    sudo \
+    && rm -rf /var/lib/apt/lists/* /var/cache/apt/* /tmp/*
 
-# Pypi paketi güncəlləmə
-RUN pip3 install --upgrade pip setuptools
-RUN cd /
-COPY . /NezrinRobot/
-RUN cd NezrinRobot
+# Pip güncəlləməsi
+RUN pip install --upgrade pip setuptools
+
+# Layihə fayllarını kopyala
 WORKDIR /NezrinRobot
-ENV PATH="/home/bot/bin:$PATH"
-RUN cd /NezrinRobot
-# Tələblər
-RUN pip3 install -U -r requirements.txt
-# Başlat
-CMD python3 -m SaitamaRobot
+COPY . .
+
+# Tələbləri quraşdır
+RUN pip install -r requirements.txt
+
+# Botu başladan komanda
+CMD ["python3", "-m", "SaitamaRobot"]
