@@ -15,14 +15,14 @@ class Config(object):
     # REQUIRED
     #Login to https://my.telegram.org and fill in these slots with the details given by it
 
-    API_ID = 4856651  # integer value, dont use ""
-    API_HASH = "b8327893a1645fc70085831bd0570b21"
-    TOKEN = "1739742678:AAEmlbaghSKVMYX4NUrxPcK_mv7k1hFMbys"  #This var used to be API_KEY but it is now TOKEN, adjust accordingly.
-    OWNER_ID = 1727079853  # If you dont know, run the bot and do /id in your private chat with it, also an integer
-    OWNER_USERNAME = "aykhan_s"
-    SUPPORT_CHAT = 'RoBotlarimTg'  #Your own group for support, do not add the @
-    JOIN_LOGGER = -1001456155319  #Prints any new group the bot is added to, prints just the name and ID.
-    EVENT_LOGS = -1001456155319  #Prints information like gbans, sudo promotes, AI enabled disable states that may help in debugging and shit
+    API_ID = 29568441  # integer value, dont use ""
+    API_HASH = "b32ec0fb66d22da6f77d355fbace4f2a"
+    TOKEN = "8134057446:AAGMJUtsPi-9FSxdqP89fIIy7akelq61PGE"  #This var used to be API_KEY but it is now TOKEN, adjust accordingly.
+    OWNER_ID = 7578184117  # If you dont know, run the bot and do /id in your private chat with it, also an integer
+    OWNER_USERNAME = "legnddi"
+    SUPPORT_CHAT = 'VIPBotlarSupport'  #Your own group for support, do not add the @
+    JOIN_LOGGER = -1002803648212  #Prints any new group the bot is added to, prints just the name and ID.
+    EVENT_LOGS = -1002803648212  #Prints information like gbans, sudo promotes, AI enabled disable states that may help in debugging and shit
 
     #RECOMMENDED
     SQLALCHEMY_DATABASE_URI = 'postgres://xgwjridmfebpna:2c8caa89a016e11aacba85822213349c8db16a714cecf8c848f78e96cf4c2892@ec2-54-225-214-37.compute-1.amazonaws.com:5432/dvnfn04k9beug'  # needed for any database modules
